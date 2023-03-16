@@ -52,13 +52,13 @@
 		A62F6DBD29BE4FBC00D79F38 /* app_control.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app_control.pb.swift; sourceTree = "<group>"; };
 		A62F6DBE29BE4FBC00D79F38 /* app_control.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app_control.grpc.swift; sourceTree = "<group>"; };
 		A6B2579F29B48BF0008D97C1 /* CommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandService.swift; sourceTree = "<group>"; };
-		A6D14FEF29796A18000ACBCF /* voice-keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "voice-keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D14FEF29796A18000ACBCF /* VoiceKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D14FF229796A18000ACBCF /* VoiceKeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceKeyboardApp.swift; sourceTree = "<group>"; };
 		A6D14FF629796A19000ACBCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6D14FF929796A19000ACBCF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A6D14FFB29796A19000ACBCF /* voice_keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = voice_keyboard.entitlements; sourceTree = "<group>"; };
-		A6D1500029796A19000ACBCF /* voice-keyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "voice-keyboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6D1500A29796A19000ACBCF /* voice-keyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "voice-keyboardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D14FFB29796A19000ACBCF /* VoiceKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoiceKeyboard.entitlements; sourceTree = "<group>"; };
+		A6D1500029796A19000ACBCF /* VoiceKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D1500A29796A19000ACBCF /* VoiceKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D1501D29796BDA000ACBCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A6D1502129797F3F000ACBCF /* main */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = main; sourceTree = "<group>"; };
 		A6DA9E5E29B133920031D9F3 /* commands.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commands.grpc.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		A6D14FE629796A18000ACBCF = {
 			isa = PBXGroup;
 			children = (
-				A6D14FF129796A18000ACBCF /* voice-keyboard */,
+				A6D14FF129796A18000ACBCF /* voice_keyboard */,
 				A6D14FF029796A18000ACBCF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,14 +120,14 @@
 		A6D14FF029796A18000ACBCF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A6D14FEF29796A18000ACBCF /* voice-keyboard.app */,
-				A6D1500029796A19000ACBCF /* voice-keyboardTests.xctest */,
-				A6D1500A29796A19000ACBCF /* voice-keyboardUITests.xctest */,
+				A6D14FEF29796A18000ACBCF /* VoiceKeyboard.app */,
+				A6D1500029796A19000ACBCF /* VoiceKeyboardTests.xctest */,
+				A6D1500A29796A19000ACBCF /* VoiceKeyboardUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A6D14FF129796A18000ACBCF /* voice-keyboard */ = {
+		A6D14FF129796A18000ACBCF /* voice_keyboard */ = {
 			isa = PBXGroup;
 			children = (
 				A6DA9E5B29B12EB00031D9F3 /* proto */,
@@ -135,11 +135,11 @@
 				A62F6DBB29BE2B5000D79F38 /* view */,
 				A6D14FF229796A18000ACBCF /* VoiceKeyboardApp.swift */,
 				A6D1501D29796BDA000ACBCF /* Info.plist */,
-				A6D14FFB29796A19000ACBCF /* voice_keyboard.entitlements */,
+				A6D14FFB29796A19000ACBCF /* VoiceKeyboard.entitlements */,
 				A6D14FF629796A19000ACBCF /* Assets.xcassets */,
 				A6D14FF829796A19000ACBCF /* Preview Content */,
 			);
-			path = "voice-keyboard";
+			path = voice_keyboard;
 			sourceTree = "<group>";
 		};
 		A6D14FF829796A19000ACBCF /* Preview Content */ = {
@@ -174,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A6D14FEE29796A18000ACBCF /* voice-keyboard */ = {
+		A6D14FEE29796A18000ACBCF /* VoiceKeyboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6D1501429796A19000ACBCF /* Build configuration list for PBXNativeTarget "voice-keyboard" */;
+			buildConfigurationList = A6D1501429796A19000ACBCF /* Build configuration list for PBXNativeTarget "VoiceKeyboard" */;
 			buildPhases = (
 				A6D14FEB29796A18000ACBCF /* Sources */,
 				A6D14FEC29796A18000ACBCF /* Frameworks */,
@@ -186,7 +186,7 @@
 			);
 			dependencies = (
 			);
-			name = "voice-keyboard";
+			name = VoiceKeyboard;
 			packageProductDependencies = (
 				A675B3B5297D3624002D5E20 /* PythonKit */,
 				A609B60529AFE4600054064E /* SwiftProtobuf */,
@@ -197,12 +197,12 @@
 				A609B61029AFE5DE0054064E /* protoc-gen-grpc-swift */,
 			);
 			productName = "voice-keyboard";
-			productReference = A6D14FEF29796A18000ACBCF /* voice-keyboard.app */;
+			productReference = A6D14FEF29796A18000ACBCF /* VoiceKeyboard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A6D14FFF29796A19000ACBCF /* voice-keyboardTests */ = {
+		A6D14FFF29796A19000ACBCF /* VoiceKeyboardTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6D1501729796A19000ACBCF /* Build configuration list for PBXNativeTarget "voice-keyboardTests" */;
+			buildConfigurationList = A6D1501729796A19000ACBCF /* Build configuration list for PBXNativeTarget "VoiceKeyboardTests" */;
 			buildPhases = (
 				A6D14FFC29796A19000ACBCF /* Sources */,
 				A6D14FFD29796A19000ACBCF /* Frameworks */,
@@ -213,14 +213,14 @@
 			dependencies = (
 				A6D1500229796A19000ACBCF /* PBXTargetDependency */,
 			);
-			name = "voice-keyboardTests";
+			name = VoiceKeyboardTests;
 			productName = "voice-keyboardTests";
-			productReference = A6D1500029796A19000ACBCF /* voice-keyboardTests.xctest */;
+			productReference = A6D1500029796A19000ACBCF /* VoiceKeyboardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A6D1500929796A19000ACBCF /* voice-keyboardUITests */ = {
+		A6D1500929796A19000ACBCF /* VoiceKeyboardUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6D1501A29796A19000ACBCF /* Build configuration list for PBXNativeTarget "voice-keyboardUITests" */;
+			buildConfigurationList = A6D1501A29796A19000ACBCF /* Build configuration list for PBXNativeTarget "VoiceKeyboardUITests" */;
 			buildPhases = (
 				A6D1500629796A19000ACBCF /* Sources */,
 				A6D1500729796A19000ACBCF /* Frameworks */,
@@ -231,9 +231,9 @@
 			dependencies = (
 				A6D1500C29796A19000ACBCF /* PBXTargetDependency */,
 			);
-			name = "voice-keyboardUITests";
+			name = VoiceKeyboardUITests;
 			productName = "voice-keyboardUITests";
-			productReference = A6D1500A29796A19000ACBCF /* voice-keyboardUITests.xctest */;
+			productReference = A6D1500A29796A19000ACBCF /* VoiceKeyboardUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -259,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A6D14FEA29796A18000ACBCF /* Build configuration list for PBXProject "voice-keyboard" */;
+			buildConfigurationList = A6D14FEA29796A18000ACBCF /* Build configuration list for PBXProject "VoiceKeyboard" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -277,9 +277,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A6D14FEE29796A18000ACBCF /* voice-keyboard */,
-				A6D14FFF29796A19000ACBCF /* voice-keyboardTests */,
-				A6D1500929796A19000ACBCF /* voice-keyboardUITests */,
+				A6D14FEE29796A18000ACBCF /* VoiceKeyboard */,
+				A6D14FFF29796A19000ACBCF /* VoiceKeyboardTests */,
+				A6D1500929796A19000ACBCF /* VoiceKeyboardUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -348,12 +348,12 @@
 /* Begin PBXTargetDependency section */
 		A6D1500229796A19000ACBCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A6D14FEE29796A18000ACBCF /* voice-keyboard */;
+			target = A6D14FEE29796A18000ACBCF /* VoiceKeyboard */;
 			targetProxy = A6D1500129796A19000ACBCF /* PBXContainerItemProxy */;
 		};
 		A6D1500C29796A19000ACBCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A6D14FEE29796A18000ACBCF /* voice-keyboard */;
+			target = A6D14FEE29796A18000ACBCF /* VoiceKeyboard */;
 			targetProxy = A6D1500B29796A19000ACBCF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -542,7 +542,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/voice-keyboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/voice-keyboard";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceKeyboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoiceKeyboard";
 			};
 			name = Debug;
 		};
@@ -560,7 +560,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/voice-keyboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/voice-keyboard";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceKeyboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoiceKeyboard";
 			};
 			name = Release;
 		};
@@ -599,7 +599,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A6D14FEA29796A18000ACBCF /* Build configuration list for PBXProject "voice-keyboard" */ = {
+		A6D14FEA29796A18000ACBCF /* Build configuration list for PBXProject "VoiceKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6D1501229796A19000ACBCF /* Debug */,
@@ -608,7 +608,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6D1501429796A19000ACBCF /* Build configuration list for PBXNativeTarget "voice-keyboard" */ = {
+		A6D1501429796A19000ACBCF /* Build configuration list for PBXNativeTarget "VoiceKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6D1501529796A19000ACBCF /* Debug */,
@@ -617,7 +617,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6D1501729796A19000ACBCF /* Build configuration list for PBXNativeTarget "voice-keyboardTests" */ = {
+		A6D1501729796A19000ACBCF /* Build configuration list for PBXNativeTarget "VoiceKeyboardTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6D1501829796A19000ACBCF /* Debug */,
@@ -626,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6D1501A29796A19000ACBCF /* Build configuration list for PBXNativeTarget "voice-keyboardUITests" */ = {
+		A6D1501A29796A19000ACBCF /* Build configuration list for PBXNativeTarget "VoiceKeyboardUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6D1501B29796A19000ACBCF /* Debug */,

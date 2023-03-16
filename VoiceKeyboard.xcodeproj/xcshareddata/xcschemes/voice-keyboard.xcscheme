@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A6D14FEE29796A18000ACBCF"
-               BuildableName = "voice-keyboard.app"
-               BlueprintName = "voice-keyboard"
-               ReferencedContainer = "container:voice-keyboard.xcodeproj">
+               BuildableName = "VoiceKeyboard.app"
+               BlueprintName = "VoiceKeyboard"
+               ReferencedContainer = "container:VoiceKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A6D14FFF29796A19000ACBCF"
-               BuildableName = "voice-keyboardTests.xctest"
-               BlueprintName = "voice-keyboardTests"
-               ReferencedContainer = "container:voice-keyboard.xcodeproj">
+               BuildableName = "VoiceKeyboardTests.xctest"
+               BlueprintName = "VoiceKeyboardTests"
+               ReferencedContainer = "container:VoiceKeyboard.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,9 +45,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A6D1500929796A19000ACBCF"
-               BuildableName = "voice-keyboardUITests.xctest"
-               BlueprintName = "voice-keyboardUITests"
-               ReferencedContainer = "container:voice-keyboard.xcodeproj">
+               BuildableName = "VoiceKeyboardUITests.xctest"
+               BlueprintName = "VoiceKeyboardUITests"
+               ReferencedContainer = "container:VoiceKeyboard.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6D14FEE29796A18000ACBCF"
-            BuildableName = "voice-keyboard.app"
-            BlueprintName = "voice-keyboard"
-            ReferencedContainer = "container:voice-keyboard.xcodeproj">
+            BuildableName = "VoiceKeyboard.app"
+            BlueprintName = "VoiceKeyboard"
+            ReferencedContainer = "container:VoiceKeyboard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -84,9 +84,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6D14FEE29796A18000ACBCF"
-            BuildableName = "voice-keyboard.app"
-            BlueprintName = "voice-keyboard"
-            ReferencedContainer = "container:voice-keyboard.xcodeproj">
+            BuildableName = "VoiceKeyboard.app"
+            BlueprintName = "VoiceKeyboard"
+            ReferencedContainer = "container:VoiceKeyboard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
