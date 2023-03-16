@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A68F91BB29C3107A00DEEF8D /* VoiceKeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91BA29C3107A00DEEF8D /* VoiceKeyboardApp.swift */; };
+		A68F91BF29C3107B00DEEF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68F91BE29C3107B00DEEF8D /* Assets.xcassets */; };
+		A68F91C229C3107B00DEEF8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68F91C129C3107B00DEEF8D /* Preview Assets.xcassets */; };
+		A68F91CB29C310B300DEEF8D /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = A68F91CA29C310B300DEEF8D /* CGRPCZlib */; };
+		A68F91CD29C310B300DEEF8D /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = A68F91CC29C310B300DEEF8D /* GRPC */; };
+		A68F91CF29C310B300DEEF8D /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = A68F91CE29C310B300DEEF8D /* protoc-gen-grpc-swift */; };
+		A68F91D429C3117200DEEF8D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91D129C3117200DEEF8D /* HomeView.swift */; };
+		A68F91D529C3117200DEEF8D /* ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91D229C3117200DEEF8D /* ShortcutsView.swift */; };
+		A68F91D629C3117200DEEF8D /* AddShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91D329C3117200DEEF8D /* AddShortcutView.swift */; };
+		A68F91DB29C3119B00DEEF8D /* CommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91D829C3119B00DEEF8D /* CommandService.swift */; };
+		A68F91DC29C3119B00DEEF8D /* commands.json in Resources */ = {isa = PBXBuildFile; fileRef = A68F91D929C3119B00DEEF8D /* commands.json */; };
+		A68F91DD29C3119B00DEEF8D /* main in Resources */ = {isa = PBXBuildFile; fileRef = A68F91DA29C3119B00DEEF8D /* main */; };
+		A68F91E329C311B500DEEF8D /* app_control.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91DF29C311B500DEEF8D /* app_control.pb.swift */; };
+		A68F91E429C311B500DEEF8D /* commands.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E029C311B500DEEF8D /* commands.grpc.swift */; };
+		A68F91E529C311B500DEEF8D /* commands.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E129C311B500DEEF8D /* commands.pb.swift */; };
+		A68F91E629C311B500DEEF8D /* app_control.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E229C311B500DEEF8D /* app_control.grpc.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A68F91B729C3107A00DEEF8D /* VoiceKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A68F91BA29C3107A00DEEF8D /* VoiceKeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceKeyboardApp.swift; sourceTree = "<group>"; };
+		A68F91BE29C3107B00DEEF8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A68F91C129C3107B00DEEF8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A68F91C329C3107B00DEEF8D /* VoiceKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoiceKeyboard.entitlements; sourceTree = "<group>"; };
+		A68F91D129C3117200DEEF8D /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A68F91D229C3117200DEEF8D /* ShortcutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutsView.swift; sourceTree = "<group>"; };
+		A68F91D329C3117200DEEF8D /* AddShortcutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShortcutView.swift; sourceTree = "<group>"; };
+		A68F91D829C3119B00DEEF8D /* CommandService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandService.swift; sourceTree = "<group>"; };
+		A68F91D929C3119B00DEEF8D /* commands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commands.json; sourceTree = "<group>"; };
+		A68F91DA29C3119B00DEEF8D /* main */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = main; sourceTree = "<group>"; };
+		A68F91DF29C311B500DEEF8D /* app_control.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app_control.pb.swift; sourceTree = "<group>"; };
+		A68F91E029C311B500DEEF8D /* commands.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commands.grpc.swift; sourceTree = "<group>"; };
+		A68F91E129C311B500DEEF8D /* commands.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commands.pb.swift; sourceTree = "<group>"; };
+		A68F91E229C311B500DEEF8D /* app_control.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app_control.grpc.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A68F91B429C3107A00DEEF8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A68F91CD29C310B300DEEF8D /* GRPC in Frameworks */,
+				A68F91CB29C310B300DEEF8D /* CGRPCZlib in Frameworks */,
+				A68F91CF29C310B300DEEF8D /* protoc-gen-grpc-swift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A68F91AE29C3107A00DEEF8D = {
+			isa = PBXGroup;
+			children = (
+				A68F91B929C3107A00DEEF8D /* VoiceKeyboard */,
+				A68F91B829C3107A00DEEF8D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A68F91B829C3107A00DEEF8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A68F91B729C3107A00DEEF8D /* VoiceKeyboard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A68F91B929C3107A00DEEF8D /* VoiceKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A68F91DE29C311A200DEEF8D /* proto */,
+				A68F91D729C3117E00DEEF8D /* server */,
+				A68F91D029C3115000DEEF8D /* view */,
+				A68F91BA29C3107A00DEEF8D /* VoiceKeyboardApp.swift */,
+				A68F91BE29C3107B00DEEF8D /* Assets.xcassets */,
+				A68F91C329C3107B00DEEF8D /* VoiceKeyboard.entitlements */,
+				A68F91C029C3107B00DEEF8D /* Preview Content */,
+			);
+			path = VoiceKeyboard;
+			sourceTree = "<group>";
+		};
+		A68F91C029C3107B00DEEF8D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A68F91C129C3107B00DEEF8D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A68F91D029C3115000DEEF8D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A68F91D329C3117200DEEF8D /* AddShortcutView.swift */,
+				A68F91D129C3117200DEEF8D /* HomeView.swift */,
+				A68F91D229C3117200DEEF8D /* ShortcutsView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A68F91D729C3117E00DEEF8D /* server */ = {
+			isa = PBXGroup;
+			children = (
+				A68F91D929C3119B00DEEF8D /* commands.json */,
+				A68F91D829C3119B00DEEF8D /* CommandService.swift */,
+				A68F91DA29C3119B00DEEF8D /* main */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		A68F91DE29C311A200DEEF8D /* proto */ = {
+			isa = PBXGroup;
+			children = (
+				A68F91E229C311B500DEEF8D /* app_control.grpc.swift */,
+				A68F91DF29C311B500DEEF8D /* app_control.pb.swift */,
+				A68F91E029C311B500DEEF8D /* commands.grpc.swift */,
+				A68F91E129C311B500DEEF8D /* commands.pb.swift */,
+			);
+			path = proto;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A68F91B629C3107A00DEEF8D /* VoiceKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A68F91C629C3107B00DEEF8D /* Build configuration list for PBXNativeTarget "VoiceKeyboard" */;
+			buildPhases = (
+				A68F91B329C3107A00DEEF8D /* Sources */,
+				A68F91B429C3107A00DEEF8D /* Frameworks */,
+				A68F91B529C3107A00DEEF8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceKeyboard;
+			packageProductDependencies = (
+				A68F91CA29C310B300DEEF8D /* CGRPCZlib */,
+				A68F91CC29C310B300DEEF8D /* GRPC */,
+				A68F91CE29C310B300DEEF8D /* protoc-gen-grpc-swift */,
+			);
+			productName = VoiceKeyboard;
+			productReference = A68F91B729C3107A00DEEF8D /* VoiceKeyboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A68F91AF29C3107A00DEEF8D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					A68F91B629C3107A00DEEF8D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = A68F91B229C3107A00DEEF8D /* Build configuration list for PBXProject "VoiceKeyboard" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A68F91AE29C3107A00DEEF8D;
+			packageReferences = (
+				A68F91C929C310B300DEEF8D /* XCRemoteSwiftPackageReference "grpc-swift" */,
+			);
+			productRefGroup = A68F91B829C3107A00DEEF8D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A68F91B629C3107A00DEEF8D /* VoiceKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A68F91B529C3107A00DEEF8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A68F91DC29C3119B00DEEF8D /* commands.json in Resources */,
+				A68F91DD29C3119B00DEEF8D /* main in Resources */,
+				A68F91C229C3107B00DEEF8D /* Preview Assets.xcassets in Resources */,
+				A68F91BF29C3107B00DEEF8D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A68F91B329C3107A00DEEF8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A68F91E429C311B500DEEF8D /* commands.grpc.swift in Sources */,
+				A68F91D629C3117200DEEF8D /* AddShortcutView.swift in Sources */,
+				A68F91BB29C3107A00DEEF8D /* VoiceKeyboardApp.swift in Sources */,
+				A68F91D429C3117200DEEF8D /* HomeView.swift in Sources */,
+				A68F91E629C311B500DEEF8D /* app_control.grpc.swift in Sources */,
+				A68F91DB29C3119B00DEEF8D /* CommandService.swift in Sources */,
+				A68F91E329C311B500DEEF8D /* app_control.pb.swift in Sources */,
+				A68F91E529C311B500DEEF8D /* commands.pb.swift in Sources */,
+				A68F91D529C3117200DEEF8D /* ShortcutsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A68F91C429C3107B00DEEF8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A68F91C529C3107B00DEEF8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		A68F91C729C3107B00DEEF8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VoiceKeyboard/VoiceKeyboard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VoiceKeyboard/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voice-keyboard.VoiceKeyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A68F91C829C3107B00DEEF8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VoiceKeyboard/VoiceKeyboard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VoiceKeyboard/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voice-keyboard.VoiceKeyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A68F91B229C3107A00DEEF8D /* Build configuration list for PBXProject "VoiceKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A68F91C429C3107B00DEEF8D /* Debug */,
+				A68F91C529C3107B00DEEF8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A68F91C629C3107B00DEEF8D /* Build configuration list for PBXNativeTarget "VoiceKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A68F91C729C3107B00DEEF8D /* Debug */,
+				A68F91C829C3107B00DEEF8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A68F91C929C310B300DEEF8D /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A68F91CA29C310B300DEEF8D /* CGRPCZlib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A68F91C929C310B300DEEF8D /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = CGRPCZlib;
+		};
+		A68F91CC29C310B300DEEF8D /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A68F91C929C310B300DEEF8D /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		A68F91CE29C310B300DEEF8D /* protoc-gen-grpc-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A68F91C929C310B300DEEF8D /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = "protoc-gen-grpc-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A68F91AF29C3107A00DEEF8D /* Project object */;
+}
