@@ -18,11 +18,12 @@
 		A68F91D629C3117200DEEF8D /* AddShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91D329C3117200DEEF8D /* AddShortcutView.swift */; };
 		A68F91DB29C3119B00DEEF8D /* CommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91D829C3119B00DEEF8D /* CommandService.swift */; };
 		A68F91DC29C3119B00DEEF8D /* commands.json in Resources */ = {isa = PBXBuildFile; fileRef = A68F91D929C3119B00DEEF8D /* commands.json */; };
-		A68F91DD29C3119B00DEEF8D /* main in Resources */ = {isa = PBXBuildFile; fileRef = A68F91DA29C3119B00DEEF8D /* main */; };
 		A68F91E329C311B500DEEF8D /* app_control.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91DF29C311B500DEEF8D /* app_control.pb.swift */; };
 		A68F91E429C311B500DEEF8D /* commands.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E029C311B500DEEF8D /* commands.grpc.swift */; };
 		A68F91E529C311B500DEEF8D /* commands.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E129C311B500DEEF8D /* commands.pb.swift */; };
 		A68F91E629C311B500DEEF8D /* app_control.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E229C311B500DEEF8D /* app_control.grpc.swift */; };
+		A6E21A1629C36AEB00377883 /* main in Resources */ = {isa = PBXBuildFile; fileRef = A6E21A1529C36AEB00377883 /* main */; };
+		A6E21A1B29C3716B00377883 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6E21A1A29C3716B00377883 /* PythonKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,11 +37,11 @@
 		A68F91D329C3117200DEEF8D /* AddShortcutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShortcutView.swift; sourceTree = "<group>"; };
 		A68F91D829C3119B00DEEF8D /* CommandService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandService.swift; sourceTree = "<group>"; };
 		A68F91D929C3119B00DEEF8D /* commands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commands.json; sourceTree = "<group>"; };
-		A68F91DA29C3119B00DEEF8D /* main */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = main; sourceTree = "<group>"; };
 		A68F91DF29C311B500DEEF8D /* app_control.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app_control.pb.swift; sourceTree = "<group>"; };
 		A68F91E029C311B500DEEF8D /* commands.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commands.grpc.swift; sourceTree = "<group>"; };
 		A68F91E129C311B500DEEF8D /* commands.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commands.pb.swift; sourceTree = "<group>"; };
 		A68F91E229C311B500DEEF8D /* app_control.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app_control.grpc.swift; sourceTree = "<group>"; };
+		A6E21A1529C36AEB00377883 /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; path = main; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +52,7 @@
 				A68F91CD29C310B300DEEF8D /* GRPC in Frameworks */,
 				A68F91CB29C310B300DEEF8D /* CGRPCZlib in Frameworks */,
 				A68F91CF29C310B300DEEF8D /* protoc-gen-grpc-swift in Frameworks */,
+				A6E21A1B29C3716B00377883 /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,9 +110,9 @@
 		A68F91D729C3117E00DEEF8D /* server */ = {
 			isa = PBXGroup;
 			children = (
+				A6E21A1529C36AEB00377883 /* main */,
 				A68F91D929C3119B00DEEF8D /* commands.json */,
 				A68F91D829C3119B00DEEF8D /* CommandService.swift */,
-				A68F91DA29C3119B00DEEF8D /* main */,
 			);
 			path = server;
 			sourceTree = "<group>";
@@ -146,6 +148,7 @@
 				A68F91CA29C310B300DEEF8D /* CGRPCZlib */,
 				A68F91CC29C310B300DEEF8D /* GRPC */,
 				A68F91CE29C310B300DEEF8D /* protoc-gen-grpc-swift */,
+				A6E21A1A29C3716B00377883 /* PythonKit */,
 			);
 			productName = VoiceKeyboard;
 			productReference = A68F91B729C3107A00DEEF8D /* VoiceKeyboard.app */;
@@ -177,6 +180,7 @@
 			mainGroup = A68F91AE29C3107A00DEEF8D;
 			packageReferences = (
 				A68F91C929C310B300DEEF8D /* XCRemoteSwiftPackageReference "grpc-swift" */,
+				A6E21A1929C3716B00377883 /* XCRemoteSwiftPackageReference "PythonKit" */,
 			);
 			productRefGroup = A68F91B829C3107A00DEEF8D /* Products */;
 			projectDirPath = "";
@@ -193,7 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A68F91DC29C3119B00DEEF8D /* commands.json in Resources */,
-				A68F91DD29C3119B00DEEF8D /* main in Resources */,
+				A6E21A1629C36AEB00377883 /* main in Resources */,
 				A68F91C229C3107B00DEEF8D /* Preview Assets.xcassets in Resources */,
 				A68F91BF29C3107B00DEEF8D /* Assets.xcassets in Resources */,
 			);
@@ -340,17 +344,28 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = VoiceKeyboard/VoiceKeyboard.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceKeyboard/Preview Content\"";
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSDesktopFolderUsageDescription = 324234;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = wer;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = Something;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VoiceKeyboard/server/main",
+					"$(PROJECT_DIR)/VoiceKeyboard/server/main/google/_upb",
+					"$(PROJECT_DIR)/VoiceKeyboard/server/main/vosk",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.voice-keyboard.VoiceKeyboard";
@@ -366,17 +381,28 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = VoiceKeyboard/VoiceKeyboard.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceKeyboard/Preview Content\"";
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSDesktopFolderUsageDescription = 324234;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = wer;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = Something;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VoiceKeyboard/server/main",
+					"$(PROJECT_DIR)/VoiceKeyboard/server/main/google/_upb",
+					"$(PROJECT_DIR)/VoiceKeyboard/server/main/vosk",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.voice-keyboard.VoiceKeyboard";
@@ -418,6 +444,14 @@
 				kind = branch;
 			};
 		};
+		A6E21A1929C3716B00377883 /* XCRemoteSwiftPackageReference "PythonKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pvieito/PythonKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -435,6 +469,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A68F91C929C310B300DEEF8D /* XCRemoteSwiftPackageReference "grpc-swift" */;
 			productName = "protoc-gen-grpc-swift";
+		};
+		A6E21A1A29C3716B00377883 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6E21A1929C3716B00377883 /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -121,12 +121,3 @@ struct HomeView: View {
         }.frame(width: 333, height: 288, alignment: .top)
     }
 }
-
-//var taskProcess = Process()
-//
-//struct HomeView_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        HomeView(process: taskProcess, service: CommandService())
-//    }
-//}
