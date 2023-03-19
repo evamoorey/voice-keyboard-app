@@ -5,10 +5,11 @@
 //  Created by Ева Галюта on 19.01.2023.
 //
 
+import Foundation
 import SwiftUI
 import GRPC
 import NIO
-
+import AVFoundation
 
 @main
 struct VoiceKeyboardApp: App {
@@ -20,14 +21,61 @@ struct VoiceKeyboardApp: App {
     init() {
         self.taskProcess = Process()
         self.commandService = CommandService()
-
+        
+        //        switch AVCaptureDevice.authorizationStatus(for: .audio) {
+        //            case .authorized: // The user has previously granted access to the camera.
+        //                print("auth")
+        //
+        //            case .notDetermined: // The user has not yet been asked for camera access.
+        //                AVCaptureDevice.requestAccess(for: .audio) { granted in
+        //                    if granted {
+        //                        print("granted")
+        //                    }
+        //                }
+        //
+        //            case .denied: // The user has previously denied access.
+        //                return
+        //
+        //            case .restricted: // The user can't grant access due to restrictions.
+        //                return
+        //        }
+//        showDefaultDeviceName()
         print("Init server")
         
         let commandsPath = Bundle.main.url(forResource: "commands",withExtension:"json")?.relativePath
-        if let mainPath = Bundle.main.url(forResource: "main", withExtension: "")?.relativePath {
+        if let mainPath = Bundle.main.url(forResource: "main-dima", withExtension: "")?.relativePath {
             try? safeShell(mainPath, conf: commandsPath ?? "", task: taskProcess)
             print("Server started on: " + taskProcess.description)
         }
+    }
+    
+    func showDefaultDeviceName() {
+        var address = AudioObjectPropertyAddress(
+          mSelector: AudioObjectPropertySelector(kAudioHardwarePropertyDefaultOutputDevice),
+          mScope: AudioObjectPropertyScope(kAudioObjectPropertyScopeGlobal),
+          mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMain)
+        )
+
+        var size = UInt32(MemoryLayout<AudioDeviceID>.size)
+        var deviceID = AudioDeviceID()
+
+        // Get device ID.
+        AudioObjectGetPropertyData(
+          AudioObjectID(kAudioObjectSystemObject), &address, 0, nil, &size, &deviceID)
+
+        // Get output device name.
+        var deviceNameRef: CFString? = nil
+
+        address.mSelector = kAudioObjectPropertyName
+        size = UInt32(MemoryLayout<CFString?>.size)
+
+        AudioObjectGetPropertyData(deviceID, &address, 0, nil, &size, &deviceNameRef)
+
+        guard let deviceName = deviceNameRef else {
+          return
+        }
+        
+        print("Default output device: \(deviceName)")
     }
     
     var body: some Scene {
@@ -38,11 +86,10 @@ struct VoiceKeyboardApp: App {
     
     func safeShell(_ command: String, conf: String, task: Process) throws {
         taskProcess.standardOutput = FileHandle.standardOutput
-        taskProcess.standardError = nil
+        taskProcess.standardError = FileHandle.standardOutput
         let result = command + " -p macos" + " -c " + conf
         taskProcess.arguments = ["-c", result]
-        
-        taskProcess.launchPath = "/bin/bash"
+        taskProcess.executableURL = URL(fileURLWithPath: "/bin/bash")
         taskProcess.standardInput = nil
         try taskProcess.run()
     }

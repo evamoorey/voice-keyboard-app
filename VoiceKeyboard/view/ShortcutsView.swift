@@ -12,14 +12,29 @@ import AVFoundation
 
 struct ShortcutsView: View {
     private let commandService: CommandService
+    @State var commands: [String: String]
     
     init(service: CommandService) {
         self.commandService = service
+        self.commands = commandService.getCommands()
     }
     
     var body: some View {
-        Text("commands")
+        VStack (alignment: .center) {
+            ForEach(commands.map{($0, $1)}, id: \.0) { command, shortcut in
+                HStack (alignment: .center){
+                    Text(shortcut).font(Font.headline.weight(.bold))
+                    Text(command).font(Font.headline.weight(.bold))
+                }
+            }
+        }
     }
     
 }
+
+//struct ShortcutsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ShortcutsView(service: CommandService())
+//    }
+//}
 
