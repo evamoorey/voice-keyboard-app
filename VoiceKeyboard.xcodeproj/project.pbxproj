@@ -24,6 +24,7 @@
 		A68F91E529C311B500DEEF8D /* commands.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E129C311B500DEEF8D /* commands.pb.swift */; };
 		A68F91E629C311B500DEEF8D /* app_control.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E229C311B500DEEF8D /* app_control.grpc.swift */; };
 		A6E21A1B29C3716B00377883 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6E21A1A29C3716B00377883 /* PythonKit */; };
+		A6EDE86129C8B65E005B6641 /* CommandInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDE86029C8B65E005B6641 /* CommandInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		A68F91E029C311B500DEEF8D /* commands.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commands.grpc.swift; sourceTree = "<group>"; };
 		A68F91E129C311B500DEEF8D /* commands.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commands.pb.swift; sourceTree = "<group>"; };
 		A68F91E229C311B500DEEF8D /* app_control.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app_control.grpc.swift; sourceTree = "<group>"; };
+		A6EDE86029C8B65E005B6641 /* CommandInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				A655488029C78F2F006DE93F /* Info.plist */,
+				A6EDE85F29C8B645005B6641 /* dto */,
 				A68F91DE29C311A200DEEF8D /* proto */,
 				A68F91D729C3117E00DEEF8D /* server */,
 				A68F91D029C3115000DEEF8D /* view */,
@@ -138,6 +141,14 @@
 				A68F91E129C311B500DEEF8D /* commands.pb.swift */,
 			);
 			path = proto;
+			sourceTree = "<group>";
+		};
+		A6EDE85F29C8B645005B6641 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				A6EDE86029C8B65E005B6641 /* CommandInfo.swift */,
+			);
+			path = dto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				A68F91E429C311B500DEEF8D /* commands.grpc.swift in Sources */,
 				A68F91D629C3117200DEEF8D /* AddShortcutView.swift in Sources */,
 				A68F91BB29C3107A00DEEF8D /* VoiceKeyboardApp.swift in Sources */,
+				A6EDE86129C8B65E005B6641 /* CommandInfo.swift in Sources */,
 				A68F91D429C3117200DEEF8D /* HomeView.swift in Sources */,
 				A68F91E629C311B500DEEF8D /* app_control.grpc.swift in Sources */,
 				A68F91DB29C3119B00DEEF8D /* CommandService.swift in Sources */,

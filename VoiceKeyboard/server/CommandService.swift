@@ -13,6 +13,7 @@ import SwiftProtobuf
 class CommandService {
     private let host = "localhost"
     private let port = 50033
+    private var id = 0
     
     init() {
     }
@@ -48,7 +49,7 @@ class CommandService {
         return "OK"
     }
     
-    func getCommands() -> [String: String] {
+    func getCommands() -> [CommandInfo] {
         do {
             let group = PlatformSupport.makeEventLoopGroup(loopCount: 1)
             defer {
@@ -65,13 +66,22 @@ class CommandService {
 
             let response = try client.getCommands(SwiftProtobuf.Google_Protobuf_Empty()).response.wait()
             print(response.commands)
-            return response.commands
+            
+            var commands = [CommandInfo]()
+            for (key, value) in response.commands {
+                commands.append(CommandInfo(id: id, command: key, shortcut: value))
+                id += 1
+            }
+            commands.sort {
+                $0.command < $1.command
+            }
+            return commands
         } catch let error as GRPCStatus {
             print("ERROR (Add command): \(error)")
-            return ["error": error.message ?? "Ошибка сервера"]
+            return []
         } catch {
             print("ERROR (Command service): \(error)")
         }
-        return [:]
+        return []
     }
 }
