@@ -95,7 +95,6 @@ class CommandService {
             let client = Commands_CommandsNIOClient(channel: channel)
 
             let response = try client.getCommands(SwiftProtobuf.Google_Protobuf_Empty()).response.wait()
-            print(response.commands)
             
             var commands = [CommandInfo]()
             for (key, value) in response.commands {
@@ -113,5 +112,65 @@ class CommandService {
             print("ERROR (Command service): \(error)")
         }
         return []
+    }
+    
+    func exportCommands(path: String) -> String {
+        do {
+            let group = PlatformSupport.makeEventLoopGroup(loopCount: 1)
+            defer {
+                try? group.syncShutdownGracefully()
+            }
+            
+            let channel = try GRPCChannelPool.with(
+                target: .host(self.host, port: self.port),
+                transportSecurity: .plaintext,
+                eventLoopGroup: group
+            )
+            
+            let client = Commands_CommandsNIOClient(channel: channel)
+            
+            let exportCmd: Commands_ExportCommandsRequest = .with {
+                $0.path = path
+            }
+
+            _ = try client.exportCommands(exportCmd).response.wait()
+            
+        } catch let error as GRPCStatus {
+            print("ERROR (Export command): \(error)")
+            return error.message ?? "Ошибка сервера"
+        } catch {
+            print("ERROR (Command service): \(error)")
+        }
+        return "OK"
+    }
+    
+    func importCommands(path: String) -> String {
+        do {
+            let group = PlatformSupport.makeEventLoopGroup(loopCount: 1)
+            defer {
+                try? group.syncShutdownGracefully()
+            }
+            
+            let channel = try GRPCChannelPool.with(
+                target: .host(self.host, port: self.port),
+                transportSecurity: .plaintext,
+                eventLoopGroup: group
+            )
+            
+            let client = Commands_CommandsNIOClient(channel: channel)
+            
+            let importCmd: Commands_ImportCommandsRequest = .with {
+                $0.path = path
+            }
+
+            _ = try client.importCommands(importCmd).response.wait()
+            
+        } catch let error as GRPCStatus {
+            print("ERROR (Import command): \(error)")
+            return error.message ?? "Ошибка сервера"
+        } catch {
+            print("ERROR (Command service): \(error)")
+        }
+        return "OK"
     }
 }
