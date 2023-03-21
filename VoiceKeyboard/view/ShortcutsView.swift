@@ -12,9 +12,11 @@ import AVFoundation
 
 struct ShortcutsView: View {
     private let commandService: CommandService
-    @State var commands: [CommandInfo]
-    @State private var sortOrder = [KeyPathComparator(\CommandInfo.command)]
+    @State private var commands: [CommandInfo]
     @State private var selection: CommandInfo.ID?
+    @State private var response: String = "OK"
+    @State private var showingAlert = false
+    
     
     init(service: CommandService) {
         self.commandService = service
@@ -23,30 +25,36 @@ struct ShortcutsView: View {
     
     var body: some View {
         VStack (alignment: .center) {
-            Text("Сохраненные сочетания").font(Font.headline.weight(.bold)).padding(.top, 6).padding(.bottom, 10)
-            Table(selection: $selection, sortOrder: $sortOrder) {
-                TableColumn("Команда", value: \.command) { commandInfo in
-                    VStack (alignment: .leading){
-                        Text(commandInfo.command)
-                        Text(commandInfo.shortcut).foregroundStyle(.secondary)
+            Text("Сохраненные сочетания").font(Font.headline.weight(.bold)).padding(.top, 6).padding(.bottom, 7)
+            List (commands, id: \.id, selection: $selection) { commandInfo in
+                VStack (alignment: .leading){
+                    Text(commandInfo.command)
+                    Text(commandInfo.shortcut).foregroundStyle(.secondary)
+                }.frame(width: 290, height: 35, alignment: .leading).listRowSeparator(.visible).listRowSeparatorTint(Color(hex: "EBEBF5").opacity(0.1))
+            }.frame(width: 320, height: 155).padding(.leading, -15)
+            Button {
+                // Delete
+                let idx = selection
+                if idx != nil  {
+                    let curCommand = commands.first{$0.id == idx}?.command
+                    if curCommand != nil {
+                        self.response = commandService.deleteCommand(command: curCommand!)
                     }
-                }.width(255)
-            }rows: {
-                ForEach(commands, content: TableRow.init)
-            }.onChange(of: sortOrder) { newOrder in
-                commands.sort(using: newOrder)
-            }.background(Color(hex: "EBEBF5").opacity(0.0))
-                .background(RoundedRectangle(cornerRadius: 15).strokeBorder(Color(hex: "EBEBF5").opacity(0.2), lineWidth: 0.5)
-                    .background(RoundedRectangle(cornerRadius: 15).fill(Color(hex: "EBEBF5").opacity(0.05))).frame(width: 308, height: 200)).frame(width: 290, height: 185, alignment: .top)
-        }.frame(width: 333, height: 268, alignment: .top)
+                }
+                
+                if self.response != "OK" {
+                    self.showingAlert = true
+                }
+                self.commands = commandService.getCommands()
+            } label: {
+                Text("Удалить").font(Font.headline.weight(.bold))
+            }.alert("Ошибка", isPresented: $showingAlert) {
+            } message: {
+                Text(self.response)
+            }.buttonStyle(PlainButtonStyle()).focusable(false).background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(hex: "EBEBF5").opacity(0.3), lineWidth: 0.5)
+                .background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.25))).frame(width:85, height: 25, alignment: .leading)).frame(width:80, height: 25).padding(.top, 7)
+        }.frame(width: 333, height: 268, alignment: .top).onAppear {
+            self.commands = commandService.getCommands()
+        }
     }
 }
-
-
-
-//struct ShortcutsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ShortcutsView(service: CommandService())
-//    }
-//}
-

@@ -49,6 +49,36 @@ class CommandService {
         return "OK"
     }
     
+    func deleteCommand(command: String) -> String {
+        do {
+            let group = PlatformSupport.makeEventLoopGroup(loopCount: 1)
+            defer {
+                try? group.syncShutdownGracefully()
+            }
+            
+            let channel = try GRPCChannelPool.with(
+                target: .host(self.host, port: self.port),
+                transportSecurity: .plaintext,
+                eventLoopGroup: group
+            )
+            
+            let client = Commands_CommandsNIOClient(channel: channel)
+            
+            let deleteCmd: Commands_DeleteCommandRequest = .with {
+                $0.command = command
+            }
+                        
+            _ = try client.deleteCommand(deleteCmd).response.wait()
+
+        } catch let error as GRPCStatus {
+            print("ERROR (Delete command): \(error)")
+            return error.message ?? "Ошибка сервера"
+        } catch {
+            print("ERROR (Command service): \(error)")
+        }
+        return "OK"
+    }
+    
     func getCommands() -> [CommandInfo] {
         do {
             let group = PlatformSupport.makeEventLoopGroup(loopCount: 1)
@@ -77,7 +107,7 @@ class CommandService {
             }
             return commands
         } catch let error as GRPCStatus {
-            print("ERROR (Add command): \(error)")
+            print("ERROR (Get command): \(error)")
             return []
         } catch {
             print("ERROR (Command service): \(error)")

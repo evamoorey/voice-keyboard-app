@@ -35,9 +35,17 @@ struct AddShortcutView: View {
                     }
                     Button {
                         // Save
-                        self.response = commandService.addCommand(command: self.command, hotKey: self.hotKey)
-                        if self.response != "OK" {
+                        if self.command.count > 37 {
+                            self.response = "Длинна команды более 37 символов"
                             self.showingAlert = true
+                        } else if self.hotKey.count > 37 {
+                            self.response = "Длинна сочетания более 37 символов"
+                            self.showingAlert = true
+                        } else {
+                            self.response = commandService.addCommand(command: self.command, hotKey: self.hotKey)
+                            if self.response != "OK" {
+                                self.showingAlert = true
+                            }
                         }
                     } label: {
                         Text("Добавить").font(Font.headline.weight(.bold))
