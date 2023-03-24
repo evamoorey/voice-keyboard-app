@@ -15,12 +15,14 @@ import AVFoundation
 struct VoiceKeyboardApp: App {
     private let taskProcess: Process
     private var commandService: CommandService
+    private let appControlService: AppControlService
     private let host = "localhost"
     private let port = 50033
     
     init() {
         self.taskProcess = Process()
         self.commandService = CommandService()
+        self.appControlService = AppControlService()
 
         print("Init server")
         
@@ -33,7 +35,7 @@ struct VoiceKeyboardApp: App {
     
     var body: some Scene {
         MenuBarExtra("Voice keyboard", systemImage: "chevron.backward.to.line") {
-            HomeView(process: taskProcess, service: commandService)
+            HomeView(process: taskProcess, service: commandService, appControl: appControlService)
         }.menuBarExtraStyle(.window)
     }
     

@@ -25,13 +25,13 @@ struct AddShortcutView: View {
             Text("Добавить команду").font(Font.headline.weight(.bold)).padding(.top, 10)
             HStack (alignment: .top){
                 VStack (alignment: .leading) {
-                    Text("Сочетание клавиш").font(Font.headline.weight(.bold)).padding(.leading, -3)
-                    TextField("Введите сочетание", text: $hotKey).textFieldStyle(PlainTextFieldStyle()).focusable(false).background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(hex: "EBEBF5").opacity(0.2), lineWidth: 0.5).background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.1))).frame(width:128, height: 30, alignment: .leading)).frame(width: 121, height: 30)
+                    Text("Сочетание клавиш").font(Font.headline.weight(.bold)).padding(.leading, -1)
+                    TextField("Введите сочетание", text: $hotKey).textFieldStyle(PlainTextFieldStyle()).focusable(false).background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(hex: "EBEBF5").opacity(0.2), lineWidth: 0.5).background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.1))).frame(width:135, height: 30, alignment: .leading)).frame(width: 125, height: 30)
                 }.padding(.all, 20).padding(.leading, 4)
                 VStack (alignment: .leading){
-                    Text("Команда").font(Font.headline.weight(.bold)).padding(.leading, -3)
+                    Text("Команда").font(Font.headline.weight(.bold)).padding(.leading, -1)
                     HStack {
-                        TextField("Введите комманду", text: $command).textFieldStyle(PlainTextFieldStyle()).focusable(false).background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(hex: "EBEBF5").opacity(0.2), lineWidth: 0.5).background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.1))).frame(width:128, height: 30, alignment: .leading)).frame(width: 121, height: 30)
+                        TextField("Введите комманду", text: $command).textFieldStyle(PlainTextFieldStyle()).focusable(false).background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(hex: "EBEBF5").opacity(0.2), lineWidth: 0.5).background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.1))).frame(width:135, height: 30, alignment: .leading)).frame(width: 125, height: 30)
                     }
                     Button {
                         // Save
@@ -53,9 +53,9 @@ struct AddShortcutView: View {
                     } message: {
                         Text(self.response)
                     }.buttonStyle(PlainButtonStyle()).focusable(false).background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(hex: "EBEBF5").opacity(0.3), lineWidth: 0.5)
-                        .background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.25))).frame(width:85, height: 25, alignment: .leading)).frame(width:80, height: 25).padding(.leading, 42).padding(.top, 5)
+                        .background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.25))).frame(width:85, height: 25, alignment: .leading)).frame(width:80, height: 25).padding(.leading, 47).padding(.top, 5)
                 }.padding(.all,20).padding(.leading, -15)
-            }
+            }.padding(.top, -10)
         }.frame(width: 333, height: 160)
     }
 }
