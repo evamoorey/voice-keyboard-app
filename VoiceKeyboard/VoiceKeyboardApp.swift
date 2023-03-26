@@ -29,7 +29,15 @@ struct VoiceKeyboardApp: App {
         let commandsPath = Bundle.main.url(forResource: "commands",withExtension:"json")?.relativePath
         if let mainPath = Bundle.main.url(forResource: "main-dima", withExtension: "")?.relativePath {
             try? safeShell(mainPath, conf: commandsPath ?? "", task: taskProcess)
-            print("Server started on: " + taskProcess.description)
+            print("Process started on: " + taskProcess.description)
+        }
+        
+        if !Connection().established(host: self.host, port: self.port) {
+            print("Server doesn't response")
+            taskProcess.interrupt()
+            NSApplication.shared.terminate(nil)
+        } else {
+            print("Connection set")
         }
     }
     

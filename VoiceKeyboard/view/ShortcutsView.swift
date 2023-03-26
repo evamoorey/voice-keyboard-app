@@ -20,7 +20,7 @@ struct ShortcutsView: View {
     
     init(service: CommandService) {
         self.commandService = service
-        self.commands = commandService.getCommands()
+        self.commands = commandService.getCommands().response
     }
     
     var body: some View {
@@ -45,7 +45,7 @@ struct ShortcutsView: View {
                 if self.response != "OK" {
                     self.showingAlert = true
                 }
-                self.commands = commandService.getCommands()
+                self.commands = commandService.getCommands().response
             } label: {
                 Text("Удалить").font(Font.headline.weight(.bold))
             }.alert("Ошибка", isPresented: $showingAlert) {
@@ -54,7 +54,12 @@ struct ShortcutsView: View {
             }.buttonStyle(PlainButtonStyle()).focusable(false).background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(hex: "EBEBF5").opacity(0.3), lineWidth: 0.5)
                 .background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.25))).frame(width:85, height: 25, alignment: .leading)).frame(width:80, height: 25).padding(.top, 7)
         }.frame(width: 333, height: 268, alignment: .top).onAppear {
-            self.commands = commandService.getCommands()
+            var commandsResponse = commandService.getCommands()
+            self.commands = commandsResponse.response
+            if commandsResponse.error != "" {
+                self.response = commandsResponse.error
+                self.showingAlert = true
+            }
         }
     }
 }

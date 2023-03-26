@@ -18,6 +18,7 @@ class CommandService {
     init() {
     }
     
+    
     func addCommand(command: String, hotKey: String) -> String {
         do {
             let group = PlatformSupport.makeEventLoopGroup(loopCount: 1)
@@ -41,10 +42,10 @@ class CommandService {
             _ = try client.addCommand(addCmd).response.wait()
 
         } catch let error as GRPCStatus {
-            print("ERROR (Add command): \(error)")
+            print("ERROR (Add command) \(error)")
             return error.message ?? "Ошибка сервера"
         } catch {
-            print("ERROR (Command service): \(error)")
+            print("ERROR (Command service) \(error)")
         }
         return "OK"
     }
@@ -71,15 +72,15 @@ class CommandService {
             _ = try client.deleteCommand(deleteCmd).response.wait()
 
         } catch let error as GRPCStatus {
-            print("ERROR (Delete command): \(error)")
+            print("ERROR (Delete command) \(error)")
             return error.message ?? "Ошибка сервера"
         } catch {
-            print("ERROR (Command service): \(error)")
+            print("ERROR (Command service) \(error)")
         }
         return "OK"
     }
     
-    func getCommands() -> [CommandInfo] {
+    func getCommands() -> CommandsResponse {
         do {
             let group = PlatformSupport.makeEventLoopGroup(loopCount: 1)
             defer {
@@ -104,14 +105,15 @@ class CommandService {
             commands.sort {
                 $0.command < $1.command
             }
-            return commands
+            return CommandsResponse(response: commands, error: "")
         } catch let error as GRPCStatus {
-            print("ERROR (Get command): \(error)")
-            return []
+            print("ERROR (Get command) \(error)")
+            return CommandsResponse(response: [], error: error.message ?? "Ошибка сервера")
         } catch {
-            print("ERROR (Command service): \(error)")
+            print("ERROR (Command service) \(error)")
         }
-        return []
+        return CommandsResponse(response: [], error: "")
+
     }
     
     func exportCommands(path: String) -> String {
@@ -136,10 +138,10 @@ class CommandService {
             _ = try client.exportCommands(exportCmd).response.wait()
             
         } catch let error as GRPCStatus {
-            print("ERROR (Export command): \(error)")
+            print("ERROR (Export command) \(error)")
             return error.message ?? "Ошибка сервера"
         } catch {
-            print("ERROR (Command service): \(error)")
+            print("ERROR (Command service) \(error)")
         }
         return "OK"
     }
@@ -166,10 +168,10 @@ class CommandService {
             _ = try client.importCommands(importCmd).response.wait()
             
         } catch let error as GRPCStatus {
-            print("ERROR (Import command): \(error)")
+            print("ERROR (Import command) \(error)")
             return error.message ?? "Ошибка сервера"
         } catch {
-            print("ERROR (Command service): \(error)")
+            print("ERROR (Command service) \(error)")
         }
         return "OK"
     }
