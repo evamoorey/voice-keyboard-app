@@ -23,18 +23,17 @@ struct VoiceKeyboardApp: App {
         self.taskProcess = Process()
         self.commandService = CommandService()
         self.appControlService = AppControlService()
-
+        
         print("Init server")
         
         let commandsPath = Bundle.main.url(forResource: "commands",withExtension:"json")?.relativePath
-        if let mainPath = Bundle.main.url(forResource: "main-dima", withExtension: "")?.relativePath {
+        if let mainPath = Bundle.main.url(forResource: "server", withExtension: "")?.relativePath {
             try? safeShell(mainPath, conf: commandsPath ?? "", task: taskProcess)
             print("Process started on: " + taskProcess.description)
         }
         
         if !Connection().established(host: self.host, port: self.port) {
             print("Server doesn't response")
-            taskProcess.interrupt()
             NSApplication.shared.terminate(nil)
         } else {
             print("Connection set")
@@ -50,7 +49,7 @@ struct VoiceKeyboardApp: App {
     func safeShell(_ command: String, conf: String, task: Process) throws {
         taskProcess.standardOutput = FileHandle.standardOutput
         taskProcess.standardError = FileHandle.standardOutput
-        let result = command + " -p macos" + " -c " + conf
+        let result = command + " -p macos"
         taskProcess.arguments = ["-c", result]
         taskProcess.executableURL = URL(fileURLWithPath: "/bin/bash")
         taskProcess.standardInput = nil

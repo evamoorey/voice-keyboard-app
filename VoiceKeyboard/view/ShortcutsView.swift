@@ -54,7 +54,7 @@ struct ShortcutsView: View {
             }.buttonStyle(PlainButtonStyle()).focusable(false).background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(hex: "EBEBF5").opacity(0.3), lineWidth: 0.5)
                 .background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.25))).frame(width:85, height: 25, alignment: .leading)).frame(width:80, height: 25).padding(.top, 7)
         }.frame(width: 333, height: 268, alignment: .top).onAppear {
-            var commandsResponse = commandService.getCommands()
+            let commandsResponse = commandService.getCommands()
             self.commands = commandsResponse.response
             if commandsResponse.error != "" {
                 self.response = commandsResponse.error
