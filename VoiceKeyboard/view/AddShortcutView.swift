@@ -56,7 +56,7 @@ struct AddShortcutView: View {
                         .background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.25))).frame(width:85, height: 25, alignment: .leading)).frame(width:80, height: 25).padding(.leading, 47).padding(.top, 5)
                 }.padding(.all,20).padding(.leading, -15)
             }.padding(.top, -10)
-        }.frame(width: 333, height: 160)
+        }.frame(width: 333, height: 288)
     }
 }
 

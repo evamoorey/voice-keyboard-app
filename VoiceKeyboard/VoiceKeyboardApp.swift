@@ -31,7 +31,7 @@ struct VoiceKeyboardApp: App {
             try? safeShell(mainPath, conf: commandsPath ?? "", task: taskProcess)
             print("Process started on: " + taskProcess.description)
         }
-        
+
         if !Connection().established(host: self.host, port: self.port) {
             print("Server doesn't response")
             NSApplication.shared.terminate(nil)
