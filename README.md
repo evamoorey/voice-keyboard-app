@@ -1,6 +1,6 @@
 # Voice keyboard MacOS
 ![Alt text](Images/mac128.png) \
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=8d2bf0&lines=Klava+shortcut+assistant)](https://git.io/typing-svg) \
+![Typing SVG](https://readme-typing-svg.herokuapp.com?color=8d2bf0&lines=Klava+shortcut+assistant) \
 The application allows you to press keyboard shortcuts by saying various commands.
 
 Application features:
