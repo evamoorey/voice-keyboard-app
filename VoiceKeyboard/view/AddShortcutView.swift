@@ -13,6 +13,8 @@ struct AddShortcutView: View {
     private let commandService: CommandService
     @State private var hotKey: String = ""
     @State private var command: String = ""
+    @State private var text: String = ""
+
     @State private var showingAlert = false
     @State private var response: String = "OK"
     
@@ -35,6 +37,7 @@ struct AddShortcutView: View {
                     }
                     Button {
                         // Save
+                        
                         if self.command.count > 37 {
                             self.response = "Длинна команды более 37 символов"
                             self.showingAlert = true
@@ -56,13 +59,12 @@ struct AddShortcutView: View {
                         .background(RoundedRectangle(cornerRadius: 5).fill(Color(hex: "EBEBF5").opacity(0.25))).frame(width:85, height: 25, alignment: .leading)).frame(width:80, height: 25).padding(.leading, 47).padding(.top, 5)
                 }.padding(.all,20).padding(.leading, -15)
             }.padding(.top, -10)
+            HStack {
+                Button ("") {
+                    hotKey = "cmd+s"
+                }.keyboardShortcut("s").hidden()
+            }
         }.frame(width: 333, height: 288)
     }
+    
 }
-
-//struct AddShortcutView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddShortcutView(service: CommandService())
-//    }
-//}
-

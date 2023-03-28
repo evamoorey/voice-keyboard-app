@@ -9,3 +9,6 @@ Application features:
 * View all saved commands with shortcuts
 * Export/import commands
 * Suspend execution of commands
+
+*Functional core by* **[DmitySH](https://github.com/DmitySH)** \
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=DmitySH&repo=voice-keyboard-core)](https://github.com/DmitySH/voice-keyboard-core)
