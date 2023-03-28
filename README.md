@@ -7,8 +7,13 @@ Application features:
 * Add new commands for shortcut
 * Delete commands
 * View all saved commands with shortcuts
-* Export/import commands
+* Export / import commands
 * Suspend execution of commands
+
+Requirements:
+* MacOS 13 and upper
+* Intel / Apple Silicon processor
+
 
 *Functional core by* **[DmitySH](https://github.com/DmitySH)** \
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=DmitySH&repo=voice-keyboard-core)](https://github.com/DmitySH/voice-keyboard-core)
