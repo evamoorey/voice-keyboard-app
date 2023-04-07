@@ -43,6 +43,7 @@ struct ExportView: View {
                     } else {
                         state = "Инфо"
                         response = "Команды экспортированы успешно в " + directoryName
+                        showingAlert = true
                     }
                 }
             } label: {

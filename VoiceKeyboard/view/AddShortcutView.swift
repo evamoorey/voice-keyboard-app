@@ -15,6 +15,7 @@ struct AddShortcutView: View {
     @State private var command: String = ""
     @State private var showingAlert = false
     @State private var response: String = "OK"
+    @State private var state: String = "Ошибка"
     
     init(service: CommandService) {
         self.commandService = service
@@ -36,16 +37,23 @@ struct AddShortcutView: View {
                     Button {
                         // Save
                         
-                        if self.command.count > 37 {
-                            self.response = "Длинна команды более 37 символов"
-                            self.showingAlert = true
-                        } else if self.hotKey.count > 37 {
-                            self.response = "Длинна сочетания более 37 символов"
-                            self.showingAlert = true
+                        if command.count > 37 {
+                            state = "Ошибка"
+                            response = "Длинна команды более 37 символов"
+                            showingAlert = true
+                        } else if hotKey.count > 37 {
+                            state = "Ошибка"
+                            response = "Длинна сочетания более 37 символов"
+                            showingAlert = true
                         } else {
-                            self.response = commandService.addCommand(command: self.command, hotKey: self.hotKey)
-                            if self.response != "OK" {
-                                self.showingAlert = true
+                            response = commandService.addCommand(command: self.command, hotKey: self.hotKey)
+                            if response != "OK" {
+                                state = "Ошибка"
+                                showingAlert = true
+                            } else {
+                                state = "Инфо"
+                                response = "Команда добавлена"
+                                showingAlert = true
                             }
                         }
                     } label: {

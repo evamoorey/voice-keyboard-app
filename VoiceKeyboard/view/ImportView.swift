@@ -43,6 +43,7 @@ struct ImportView: View {
                     } else {
                         state = "Инфо"
                         response = "Команды импортированы успешно"
+                        showingAlert = true
                     }
                 }
             } label: {
