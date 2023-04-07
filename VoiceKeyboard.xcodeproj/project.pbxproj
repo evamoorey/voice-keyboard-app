@@ -26,8 +26,6 @@
 		A68F91E529C311B500DEEF8D /* commands.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E129C311B500DEEF8D /* commands.pb.swift */; };
 		A68F91E629C311B500DEEF8D /* app_control.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91E229C311B500DEEF8D /* app_control.grpc.swift */; };
 		A6D69E4829CE37CE00C74FEF /* AppControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D69E4729CE37CE00C74FEF /* AppControlService.swift */; };
-		A6D69E4A29CE3FE100C74FEF /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D69E4929CE3FE100C74FEF /* ExportView.swift */; };
-		A6D69E4C29CE3FF400C74FEF /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D69E4B29CE3FF400C74FEF /* ImportView.swift */; };
 		A6E21A1B29C3716B00377883 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6E21A1A29C3716B00377883 /* PythonKit */; };
 		A6EDE86129C8B65E005B6641 /* CommandInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDE86029C8B65E005B6641 /* CommandInfo.swift */; };
 /* End PBXBuildFile section */
@@ -53,8 +51,6 @@
 		A68F91E129C311B500DEEF8D /* commands.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commands.pb.swift; sourceTree = "<group>"; };
 		A68F91E229C311B500DEEF8D /* app_control.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app_control.grpc.swift; sourceTree = "<group>"; };
 		A6D69E4729CE37CE00C74FEF /* AppControlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControlService.swift; sourceTree = "<group>"; };
-		A6D69E4929CE3FE100C74FEF /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
-		A6D69E4B29CE3FF400C74FEF /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
 		A6EDE86029C8B65E005B6641 /* CommandInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,8 +124,6 @@
 				A68F91D329C3117200DEEF8D /* AddShortcutView.swift */,
 				A68F91D129C3117200DEEF8D /* HomeView.swift */,
 				A68F91D229C3117200DEEF8D /* ShortcutsView.swift */,
-				A6D69E4929CE3FE100C74FEF /* ExportView.swift */,
-				A6D69E4B29CE3FF400C74FEF /* ImportView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -258,8 +252,6 @@
 				A640F06229D0473000FF88D0 /* CommandsResponse.swift in Sources */,
 				A68F91E629C311B500DEEF8D /* app_control.grpc.swift in Sources */,
 				A68F91DB29C3119B00DEEF8D /* CommandService.swift in Sources */,
-				A6D69E4A29CE3FE100C74FEF /* ExportView.swift in Sources */,
-				A6D69E4C29CE3FF400C74FEF /* ImportView.swift in Sources */,
 				A68F91E329C311B500DEEF8D /* app_control.pb.swift in Sources */,
 				A68F91E529C311B500DEEF8D /* commands.pb.swift in Sources */,
 				A68F91D529C3117200DEEF8D /* ShortcutsView.swift in Sources */,

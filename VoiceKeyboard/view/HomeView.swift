@@ -10,9 +10,13 @@ struct HomeView: View {
     private let taskProcess: Process
     private let commandService: CommandService
     private let appControlService: AppControlService
+    
     @State private var status = true
     @State private var showingAlert = false
+    @State private var state: String = "Ошибка"
     @State private var response: String = "OK"
+    @State private var fileName = "<none>"
+    @State private var directoryName = "<none>"
     
     init(process: Process, service: CommandService, appControl: AppControlService) {
         self.taskProcess = process
@@ -77,7 +81,32 @@ struct HomeView: View {
                         .background(RoundedRectangle(cornerRadius: 15).fill(Color(hex: "EBEBF5").opacity(0.05))).frame(width:95, height: 85)).focusable(false).padding(.leading, 15)
                 }.frame(width: 309, height: 85, alignment: .leading).padding(.top, 21)
                 HStack {
-                    NavigationLink(destination: ImportView(service: commandService)) {
+                    Button {
+                        // Import commands
+                        let panel = NSOpenPanel()
+                        panel.allowsMultipleSelection = false
+                        panel.canChooseDirectories = false
+                        panel.canChooseFiles = true
+                        panel.allowedContentTypes = [.json]
+                        if panel.runModal() == .OK {
+                            fileName = panel.url?.path() ?? "<none>"
+                        }
+                        if fileName == "<none>" {
+                            state = "Ошибка"
+                            response = "Файл не был выбран"
+                            showingAlert = true
+                        } else {
+                            response = commandService.importCommands(path: fileName)
+                            if response != "OK" {
+                                state = "Ошибка"
+                                showingAlert = true
+                            } else {
+                                state = "Инфо"
+                                response = "Команды импортированы успешно"
+                                showingAlert = true
+                            }
+                        }
+                    }label:{
                         VStack (alignment: .leading) {
                             ZStack {
                                 Circle()
@@ -91,9 +120,36 @@ struct HomeView: View {
                                 Text("команд").font(Font.headline.weight(.bold))
                             }
                         }.frame(width:70, height:85, alignment: .leading)
+                    }.alert(state, isPresented: $showingAlert) {
+                    } message: {
+                        Text(self.response)
                     }.buttonStyle(PlainButtonStyle()).background(RoundedRectangle(cornerRadius: 15).strokeBorder(Color(hex: "EBEBF5").opacity(0.2), lineWidth: 0.5)
                         .background(RoundedRectangle(cornerRadius: 15).fill(Color(hex: "EBEBF5").opacity(0.05))).frame(width:95, height: 85)).focusable(false).frame(width:95, height: 85)
-                    NavigationLink(destination: ExportView(service: commandService)) {
+                    Button {
+                        let panel = NSOpenPanel()
+                        panel.allowsMultipleSelection = false
+                        panel.canChooseDirectories = true
+                        panel.canChooseFiles = false
+                        if panel.runModal() == .OK {
+                            directoryName = panel.url?.path() ?? "<none>"
+                        }
+                        print(directoryName)
+                        if directoryName == "<none>" {
+                            state = "Ошибка"
+                            response = "Папка не была выбрана"
+                            showingAlert = true
+                        } else {
+                            response = commandService.exportCommands(path: directoryName + "commands.json")
+                            if response != "OK" {
+                                state = "Ошибка"
+                                showingAlert = true
+                            } else {
+                                state = "Инфо"
+                                response = "Команды экспортированы успешно в " + directoryName
+                                showingAlert = true
+                            }
+                        }
+                    }label: {
                         VStack (alignment: .leading) {
                             ZStack {
                                 Circle()
@@ -107,6 +163,9 @@ struct HomeView: View {
                                 Text("команд").font(Font.headline.weight(.bold))
                             }
                         }.frame(width:70, height:85, alignment: .leading)
+                    }.alert(state, isPresented: $showingAlert) {
+                    } message: {
+                        Text(response)
                     }.buttonStyle(PlainButtonStyle()).background(RoundedRectangle(cornerRadius: 15).strokeBorder(Color(hex: "EBEBF5").opacity(0.2), lineWidth: 0.5)
                         .background(RoundedRectangle(cornerRadius: 15).fill(Color(hex: "EBEBF5").opacity(0.05))).frame(width:95, height: 85)).focusable(false).frame(width:95, height: 85).padding(.leading, 3)
                     Button {
