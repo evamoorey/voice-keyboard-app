@@ -30,7 +30,7 @@ struct HomeView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Голосовая клавиатура").font(Font.headline.weight(.bold))
-                        Text("v1.0.0")
+                        Text("v1.1.0")
                     }
                     HStack {
                         Button {
