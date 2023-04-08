@@ -10,9 +10,9 @@ Application features:
 * Export / import commands
 * Suspend execution of commands
 
-<img src="Images/home.png" alt= “” width="350" height="250">
-<img src="Images/add.png" alt= “” width="350" height="250">
-<img src="Images/commands.png" alt= “” width="350" height="250">
+<img src="Images/home.png" alt= “” width="250" height="200">
+<img src="Images/add.png" alt= “” width="250" height="200">
+<img src="Images/commands.png" alt= “” width="250" height="200">
 
 For MacOS 13 and upper
 
