@@ -27,7 +27,7 @@ struct VoiceKeyboardApp: App {
         print("Init server")
         
         let commandsPath = Bundle.main.url(forResource: "commands",withExtension:"json")?.relativePath
-        if let mainPath = Bundle.main.url(forResource: "server", withExtension: "")?.relativePath {
+        if let mainPath = Bundle.main.url(forResource: "vk_server", withExtension: "")?.relativePath {
             try? safeShell(mainPath, conf: commandsPath ?? "", task: taskProcess)
             print("Process started on: " + taskProcess.description)
         }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A640F06229D0473000FF88D0 /* CommandsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640F06129D0473000FF88D0 /* CommandsResponse.swift */; };
 		A640F06429D049AF00FF88D0 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640F06329D049AF00FF88D0 /* Connection.swift */; };
-		A640F06629D079F600FF88D0 /* server in Resources */ = {isa = PBXBuildFile; fileRef = A640F06529D079F600FF88D0 /* server */; };
+		A665D3F729E1EB8E007C11E5 /* vk_server in Resources */ = {isa = PBXBuildFile; fileRef = A665D3F629E1EB8E007C11E5 /* vk_server */; };
 		A68F91BB29C3107A00DEEF8D /* VoiceKeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F91BA29C3107A00DEEF8D /* VoiceKeyboardApp.swift */; };
 		A68F91BF29C3107B00DEEF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68F91BE29C3107B00DEEF8D /* Assets.xcassets */; };
 		A68F91C229C3107B00DEEF8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68F91C129C3107B00DEEF8D /* Preview Assets.xcassets */; };
@@ -33,9 +33,9 @@
 /* Begin PBXFileReference section */
 		A640F06129D0473000FF88D0 /* CommandsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsResponse.swift; sourceTree = "<group>"; };
 		A640F06329D049AF00FF88D0 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		A640F06529D079F600FF88D0 /* server */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = server; sourceTree = "<group>"; };
 		A655484929C76FE8006DE93F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A655488029C78F2F006DE93F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A665D3F629E1EB8E007C11E5 /* vk_server */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = vk_server; sourceTree = "<group>"; };
 		A68F91B729C3107A00DEEF8D /* VoiceKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68F91BA29C3107A00DEEF8D /* VoiceKeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceKeyboardApp.swift; sourceTree = "<group>"; };
 		A68F91BE29C3107B00DEEF8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		A68F91D729C3117E00DEEF8D /* server */ = {
 			isa = PBXGroup;
 			children = (
-				A640F06529D079F600FF88D0 /* server */,
+				A665D3F629E1EB8E007C11E5 /* vk_server */,
 				A68F91D929C3119B00DEEF8D /* commands.json */,
 				A68F91D829C3119B00DEEF8D /* CommandService.swift */,
 				A6D69E4729CE37CE00C74FEF /* AppControlService.swift */,
@@ -228,8 +228,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A665D3F729E1EB8E007C11E5 /* vk_server in Resources */,
 				A68F91DC29C3119B00DEEF8D /* commands.json in Resources */,
-				A640F06629D079F600FF88D0 /* server in Resources */,
 				A68F91C229C3107B00DEEF8D /* Preview Assets.xcassets in Resources */,
 				A68F91BF29C3107B00DEEF8D /* Assets.xcassets in Resources */,
 			);
