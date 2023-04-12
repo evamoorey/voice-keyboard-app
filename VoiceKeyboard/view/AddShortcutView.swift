@@ -58,7 +58,7 @@ struct AddShortcutView: View {
                         }
                     } label: {
                         Text("Добавить").font(Font.headline.weight(.bold))
-                    }.alert("Ошибка", isPresented: $showingAlert) {
+                    }.alert(state, isPresented: $showingAlert) {
                     } message: {
                         Text(self.response)
                     }.buttonStyle(PlainButtonStyle()).focusable(false).background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(hex: "EBEBF5").opacity(0.3), lineWidth: 0.5)
